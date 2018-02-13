@@ -146,19 +146,20 @@ the community.
           Ed25519SigningKey
       </td>
       <td>
-          None
+          <a href="https://w3c-dvcg.github.io/lds-ed255192018/">Ed25519 Signature Suite 2018</a>
       </td>
       <td>
-          Kim Duffy
+          Markus Sabadello
       </td>
       <td>
 <pre>
 {
-  "id": "did:example:123456789abcdefghi/keys/2",
-  "type": "Ed25519SigningKey",
-  "owner": "did:example:123456789abcdefghi",
-  "expires": "2017-02-08T16:02:20Z",
-  "publicKeyBase64": "IOmA4R7TfhkYTYW87...CBMq2/gi25s="
+  "@context": ["https://w3id.org/security/v1"],
+    "id": "did:example:123456789abcdefghi#keys-1",
+    "type": "Ed25519VerificationKey",
+    "owner": "did:example:123456789abcdefghi",
+    "publicKeyBase64" : "H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV"
+  }
 }
 </pre class="nohighlight">
       </td>
