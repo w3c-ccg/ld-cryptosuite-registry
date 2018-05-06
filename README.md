@@ -1,8 +1,8 @@
-## Linked Data Key Registry
+## Linked Data Cryptographic Suite Registry
 
-This repository contains the Linked Data Key Registry,
-which is a list of all known Linked Data key formats and their current level 
-of maturity.
+This repository contains the Linked Data Cryptographic Suite Registry
+which is a list of all known Linked Data cryptographic suites and their
+current level of maturity.
 
 We encourage contributions meeting the [Contribution
 Guidelines](CONTRIBUTING.md).  While we prefer the creation of issues
