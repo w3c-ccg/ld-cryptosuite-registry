@@ -165,92 +165,124 @@ and request assistance via the
 <h1>The Registry</h1>
 
 <p>
-This table summarizes the Linked Data key specifications currently known to
+This section summarizes the Linked Data key specifications currently known to
 the community.
 </p>
 
-<table class="simple">
-  <thead>
-    <tr>
-      <th>Key Identifier</th>
-      <th>Specification</th>
-      <th>Authors</th>
-      <th>Example</th>
-    </tr>
-  </thead>
+  <section>
+    <h2>Ed25519Signature2018</h2>
 
-  <tbody>
-    <tr>
-      <td>
-          Ed25519VerificationKey2018
-      </td>
-      <td>
-          <a href="https://w3c-dvcg.github.io/lds-ed25519-2018/">Ed25519 Signature Suite 2018</a>
-      </td>
-      <td>
-          Markus Sabadello
-      </td>
-      <td>
-<pre>
-{
+    <table class="simple">
+      <thead>
+        <tr>
+          <th colspan=2>Summary</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Identifiers</td>
+          <td>Ed25519Signature2018, Ed25519VerificationKey2018</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td>PROVISIONAL</td>
+        </tr>
+        <tr>
+          <td>Authors</td>
+          <td>Markus Sabadello</td>
+        </tr>
+        <tr>
+          <td>Specification</td>
+          <td><a href="https://w3c-dvcg.github.io/lds-ed25519-2018/">Ed25519 Signature Suite 2018</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <pre class="example nohighlight" title="Example of Ed25519VerificationKey2018">{
   "@context": ["https://w3id.org/security/v1"],
   "id": "did:example:123456789abcdefghi#keys-1",
   "type": "Ed25519VerificationKey2018",
   "owner": "did:example:123456789abcdefghi",
   "publicKeyBase58" : "H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV"
-}
-</pre class="nohighlight">
-      </td>
-    </tr>
+}</pre>
+  </section>
 
-    <tr>
-      <td>
-          RsaVerificationKey2018
-      </td>
-      <td>
-          <a href="https://w3c-dvcg.github.io/lds-rsa2018/">RSA Signature Suite 2018</a>
-      </td>
-      <td>
-          Dave Longley, Manu Sporny
-      </td>
-      <td>
-<pre class="nohighlight">
-{
+  <section>
+    <h2>RsaSignature2018</h2>
+
+    <table class="simple">
+      <thead>
+        <tr>
+          <th colspan=2>Summary</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Identifiers</td>
+          <td>RsaSignature2018, RsaVerificationKey2018</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td>PROVISIONAL</td>
+        </tr>
+        <tr>
+          <td>Authors</td>
+          <td>Dave Longley, Manu Sporny</td>
+        </tr>
+        <tr>
+          <td>Specification</td>
+          <td><a href="https://w3c-dvcg.github.io/lds-rsa2018/">RSA Signature Suite 2018</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <pre class="example nohighlight" title="Example of RsaVerificationKey2018">{
   "id": "did:example:123456789abcdefghi#keys-1",
   "type": "RsaVerificationKey2018",
   "owner": "did:example:123456789abcdefghi",
   "publicKeyPem": "-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"
-}
-</pre>
-      </td>
-    </tr>
+}</pre>
+  </section>
 
-    <tr>
-      <td>
-          EdDsaSAPublicKeySecp256k1
-      </td>
-      <td>
-          <a href="https://w3c-dvcg.github.io/lds-koblitz2016/">Koblitz Signature Suite 2016</a>
-      </td>
-      <td>
-          Harlan Wood, Manu Sporny
-      </td>
-      <td>
-<pre class="nohighlight">
-{
+  <section>
+    <h2>EdDsaSASignatureSecp256k1</h2>
+
+    <table class="simple">
+      <thead>
+        <tr>
+          <th colspan=2>Summary</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Identifiers</td>
+          <td>EdDsaSASignatureSecp256k1, EdDsaSAPublicKeySecp256k1</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td>PROVISIONAL</td>
+        </tr>
+        <tr>
+          <td>Authors</td>
+          <td>Harlan Wood, Manu Sporny</td>
+        </tr>
+        <tr>
+          <td>Specification</td>
+          <td><a href="https://w3c-dvcg.github.io/lds-koblitz2016/">Koblitz Signature Suite 2016</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <pre class="example nohighlight" title="Example of Ed25519VerificationKey2018">{
   "id": "did:example:123456789abcdefghi#keys-1",
   "type": "EdDsaSAPublicKeySecp256k1",
   "owner": "did:example:123456789abcdefghi",
-  "publicKeyHex": "02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71"
-}
-</pre>
-      </td>
-    </tr>
-
-  </tbody>
-</table>
-
-</section>
+  "publicKeyHex": "02b97c30de767f084...263d29f1450936b71"
+}</pre>
+  </section>
 
 </section>
 
