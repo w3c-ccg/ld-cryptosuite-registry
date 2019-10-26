@@ -113,7 +113,6 @@ Drummond Reed, and Joe Andrieu.
 
 </section>
 
-
 <section>
 <h1>Introduction</h1>
 <p>
@@ -162,15 +161,46 @@ and request assistance via the
 </section>
 
 <section>
-<h1>Verification Methods</h1>
+<h1>Verification Methods and Signature Suites</h1>
 
 <p>
-This section summarizes the verification methods currently known to
-the community.
+This section summarizes the cryptographic signature suites and their
+corresponding verification methods currently known to the community.
 </p>
 
   <section>
-    <h2>Ed25519VerificationKey2018</h2>
+    <h2>Ed25519</h2>
+
+    <h3>Ed25519Signature2018</h3>
+
+    <table class="simple">
+      <thead>
+        <tr>
+          <th colspan=2>Summary</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Identifiers</td>
+          <td>Ed25519Signature2018</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td>PROVISIONAL</td>
+        </tr>
+        <tr>
+          <td>Authors</td>
+          <td>Markus Sabadello</td>
+        </tr>
+        <tr>
+          <td>Specification</td>
+          <td><a href="https://w3c-dvcg.github.io/lds-ed25519-2018/">Ed25519 Signature Suite 2018</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Ed25519VerificationKey2018</h3>
 
     <table class="simple">
       <thead>
@@ -204,12 +234,44 @@ the community.
   "id": "did:example:123456789abcdefghi#keys-1",
   "type": "Ed25519VerificationKey2018",
   "controller": "did:example:123456789abcdefghi",
+  "expires": "2017-02-08T16:02:20Z",
   "publicKeyBase58" : "H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV"
 }</pre>
   </section>
 
   <section>
-    <h2>RsaVerificationKey2018</h2>
+    <h2>RSA</h2>
+
+    <h3>RsaSignature2018</h3>
+
+    <table class="simple">
+      <thead>
+        <tr>
+          <th colspan=2>Summary</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Identifiers</td>
+          <td>RsaSignature2018</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td>PROVISIONAL</td>
+        </tr>
+        <tr>
+          <td>Authors</td>
+          <td>Dave Longley, Manu Sporny</td>
+        </tr>
+        <tr>
+          <td>Specification</td>
+          <td><a href="https://w3c-dvcg.github.io/lds-rsa2018/">RSA Signature Suite 2018</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>RsaVerificationKey2018</h3>
 
     <table class="simple">
       <thead>
@@ -242,12 +304,44 @@ the community.
   "id": "did:example:123456789abcdefghi#keys-1",
   "type": "RsaVerificationKey2018",
   "controller": "did:example:123456789abcdefghi",
+  "expires": "2017-02-08T16:02:20Z",
   "publicKeyPem": "-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"
 }</pre>
   </section>
 
   <section>
-    <h2>EcdsaSecp256k1VerificationKey2019</h2>
+    <h2>ECDSA Secp256k1</h2>
+
+    <h3>EcdsaSecp256k1Signature2019</h3>
+
+    <table class="simple">
+      <thead>
+        <tr>
+          <th colspan=2>Summary</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Identifiers</td>
+          <td>EcdsaSecp256k1Signature2019</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td>PROVISIONAL</td>
+        </tr>
+        <tr>
+          <td>Authors</td>
+          <td>Orie Steele</td>
+        </tr>
+        <tr>
+          <td>Specification</td>
+          <td><a href="https://w3c-dvcg.github.io/lds-ecdsa-secp256k1-2019/">ECDSA Secp256k1 Signature Suite 2019</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>EcdsaSecp256k1VerificationKey2019</h3>
 
     <table class="simple">
       <thead>
@@ -280,82 +374,9 @@ the community.
   "id": "did:example:123456789abcdefghi#keys-1",
   "type": "EcdsaSecp256k1VerificationKey2019",
   "controller": "did:example:123456789abcdefghi",
+  "expires": "2017-02-08T16:02:20Z",
   "publicKeyHex": "02b97c30de767f084...263d29f1450936b71"
 }</pre>
-  </section>
-
-</section>
-
-<section>
-<h1>Signature Suites</h1>
-
-<p>
-This section summarizes the signature suites currently known to
-the community.
-</p>
-
-  <section>
-    <h2>Ed25519Signature2018</h2>
-
-    <table class="simple">
-      <thead>
-        <tr>
-          <th colspan=2>Summary</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td>Identifiers</td>
-          <td>Ed25519Signature2018</td>
-        </tr>
-        <tr>
-          <td>Status</td>
-          <td>PROVISIONAL</td>
-        </tr>
-        <tr>
-          <td>Authors</td>
-          <td>Markus Sabadello</td>
-        </tr>
-        <tr>
-          <td>Specification</td>
-          <td><a href="https://w3c-dvcg.github.io/lds-ed25519-2018/">Ed25519 Signature Suite 2018</a></td>
-        </tr>
-      </tbody>
-    </table>
-
-  </section>
-
-  <section>
-    <h2>RsaSignature2018</h2>
-
-    <table class="simple">
-      <thead>
-        <tr>
-          <th colspan=2>Summary</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td>Identifiers</td>
-          <td>RsaSignature2018</td>
-        </tr>
-        <tr>
-          <td>Status</td>
-          <td>PROVISIONAL</td>
-        </tr>
-        <tr>
-          <td>Authors</td>
-          <td>Dave Longley, Manu Sporny</td>
-        </tr>
-        <tr>
-          <td>Specification</td>
-          <td><a href="https://w3c-dvcg.github.io/lds-rsa2018/">RSA Signature Suite 2018</a></td>
-        </tr>
-      </tbody>
-    </table>
-
   </section>
 
   <section>
@@ -387,38 +408,6 @@ the community.
         </tr>
       </tbody>
     </table>
-  </section>
-
-  <section>
-    <h2>EcdsaSecp256k1Signature2019</h2>
-
-    <table class="simple">
-      <thead>
-        <tr>
-          <th colspan=2>Summary</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td>Identifiers</td>
-          <td>EcdsaSecp256k1Signature2019</td>
-        </tr>
-        <tr>
-          <td>Status</td>
-          <td>PROVISIONAL</td>
-        </tr>
-        <tr>
-          <td>Authors</td>
-          <td>Orie Steele</td>
-        </tr>
-        <tr>
-          <td>Specification</td>
-          <td><a href="https://w3c-dvcg.github.io/lds-ecdsa-secp256k1-2019/">ECDSA Secp256k1 Signature Suite 2019</a></td>
-        </tr>
-      </tbody>
-    </table>
-
   </section>
 
 </section>
