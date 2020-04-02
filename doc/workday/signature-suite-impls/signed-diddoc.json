@@ -1,0 +1,26 @@
+{
+  "id": "did:work:6sYe1y3zXhmyrBkgHgAgaq",
+  "publicKey": [
+    {
+      "id": "did:work:6sYe1y3zXhmyrBkgHgAgaq#key-1",
+      "type": "WorkdayEd25519Signature2020",
+      "controller": "fooIssuer",
+      "publicKeyBase58": "4CcKDtU1JNGi8U4D8Rv9CHzfmF7xzaxEAPFA54eQjRHF"
+    }
+  ],
+  "authentication": null,
+  "service": [
+    {
+      "id": "schemaID",
+      "type": "schema",
+      "serviceEndpoint": "schemaID"
+    }
+  ],
+  "proof": {
+    "created": "2020-02-21T22:37:48Z",
+    "creator": "did:work:6sYe1y3zXhmyrBkgHgAgaq#key-1",
+    "nonce": "524a497a-871c-4b89-a325-205f78fc5fcd",
+    "signatureValue": "2NuYkfkFy8o4R8iRCaLzTYc1Uss8s22rvC7jiY4BA49sFmWbwbEkQ6BHQPULEp7mPfQQvJdKSjKRLJF8sp62GKvo",
+    "type": "WorkdayEd25519Signature2020"
+  }
+}
