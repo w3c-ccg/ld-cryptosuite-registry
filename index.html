@@ -163,15 +163,18 @@ and request assistance via the
 </section>
 
 <section>
-<h1>Signature Suites and Verification Methods</h1>
+<h1>Signature Suites</h1>
 
 <p>
 This section summarizes the cryptographic signature suites and their
-corresponding verification methods currently known to the community.
+corresponding verification methods currently known to the community. 
+By convention there is a 1-1 mapping between signature suite (<code>proof.type</code>) and verification method (<code>publicKey.type</code>).
+Suites that support multiple verification methods MUST state so explicitly, and MUST register all verification method types in the suite specification.
 </p>
 
   <section>
     <h2>Ed25519</h2>
+    <section>
 
     <h3>Ed25519Signature2018</h3>
 
@@ -201,6 +204,7 @@ corresponding verification methods currently known to the community.
         </tr>
       </tbody>
     </table>
+  </section>
 
     <h3>Ed25519VerificationKey2018</h3>
 
@@ -243,6 +247,7 @@ corresponding verification methods currently known to the community.
 
   <section>
     <h2>RSA</h2>
+    <section>
 
     <h3>RsaSignature2018</h3>
 
@@ -311,8 +316,12 @@ corresponding verification methods currently known to the community.
 }</pre>
   </section>
 
+</section>
+
   <section>
-    <h2>ECDSA Secp256k1</h2>
+ 
+    <h2>Secp256k1</h2>
+    <section>
 
     <h3>EcdsaSecp256k1Signature2019</h3>
 
@@ -372,18 +381,49 @@ corresponding verification methods currently known to the community.
       </tbody>
     </table>
 
-    <pre class="example nohighlight" title="Example of EcdsaSecp256k1VerificationKey2019">{
-  "id": "did:example:123456789abcdefghi#keys-1",
+<pre class="example nohighlight" title="Example using publicKeyJwk">
+{
+  "id": "did:example:123#WqzaOweASs78whhl_YvCEvj1nd89IycryVlmZMefcjU",
   "type": "EcdsaSecp256k1VerificationKey2019",
-  "controller": "did:example:123456789abcdefghi",
+  "controller": "did:example:123",
+  "publicKeyJwk": {
+    "crv": "secp256k1",
+    "x": "4xAbUxbGGFPv4qpHlPFAUJdzteUGR1lRK-CELCufU9w",
+    "y": "EYcgCTsff1qtZjI9_ckZTXDSKAIuM0BknrKgo0BZ_Is",
+    "kty": "EC",
+    "kid": "WqzaOweASs78whhl_YvCEvj1nd89IycryVlmZMefcjU"
+  }
+}
+</pre>
+
+<pre class="example nohighlight" title="Example using publicKeyBase58">
+  {
+    "id": "did:example:123#zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4",
+    "type": "EcdsaSecp256k1VerificationKey2019",
+    "controller": "did:example:123",
+    "expires": "2017-02-08T16:02:20Z",
+    "publicKeyBase58": '231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL'
+  }
+</pre>
+
+<p class="issue" data-number="28"><code>publicKeyHex</code> remains unsupported in did-core.</p>
+
+<pre class="example nohighlight" title="Example using publicKeyHex">
+{
+  "id": "did:example:123#keys-1",
+  "type": "EcdsaSecp256k1VerificationKey2019",
+  "controller": "did:example:123",
   "expires": "2017-02-08T16:02:20Z",
   "publicKeyHex": "02b97c30de767f084...263d29f1450936b71"
-}</pre>
+}
+</pre>
   </section>
-
+</section>
 
   <section>
     <h2>JWS</h2>
+
+    <section>
 
     <h3>JsonWebSignature2020</h3>
 
@@ -457,9 +497,11 @@ corresponding verification methods currently known to the community.
       }
   </pre>
   </section>
+</section>
 
   <section>
     <h2>GPG</h2>
+    <section>
 
     <h3>GpgSignature2020</h3>
 
@@ -529,6 +571,7 @@ corresponding verification methods currently known to the community.
   </pre>
   </section>
 
+</section>
 </section>
 
 </body>
