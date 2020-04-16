@@ -1,7 +1,7 @@
 # Workday Signature Suite
 - Authors: 
   - Gabe Cohen [gabe.cohen@workday.com](mailto:gabe.cohen@workday.com)
-- Last updated: 2020-02-20
+- Last updated: 2020-04-06
 
 ## Status
 - Status: **DRAFT**
@@ -18,7 +18,6 @@ Operating within the ecosystem of DIDs, Verifiable Credentials, and Distributed 
     - [Type](#type)
       + [Verification Key](#verification-key)
     - [Canonicalization Algorithm](#canonicalization-algorithm)
-      + [Serialization](#serialization)
     - [Digest Algorithm](#digest-algorithm)
     - [Signature Algorithm](#signature-algorithm)
   * [Prior Art](#prior-art)
@@ -31,6 +30,8 @@ According to the [Linked Data Signatures](https://w3c-dvcg.github.io/ld-signatur
 >  is designed to be easy to use by developers and therefore strives to minimize the amount of information one has to remember to generate a signature. 
 
 The document outlines five properties that are required to comprise a Signature Suite: **id**, **type**, **canonicalizationAlgorithm**, **digestAlgorithm**, and **signatureAlgorithm**.
+
+This specification is intended to work only on JSON data.
 
 ### ID
 > A URL that identifies the signature suite. For example: https://w3id.org/security/v1#Ed25519Signature2018.
@@ -49,80 +50,7 @@ WorkEd25519VerificationKey2020. This type is used to represent keys that specifi
 ### Canonicalization Algorithm
 > A URL that identifies the canonicalization algorithm to use on the document. For example: https://w3id.org/security#URDNA2015.
 
-This signature suite differs from others mainly in its canonicalization algorithm. The algorithm is simple and as follows: recursively alphabetize the data before signing. String values are [UTF-8](https://tools.ietf.org/html/rfc3629) encoded.
-
-Below we offer three examples to clarify this algorithm. Let's say we have the following structured data that we wish to sign over:
-
-#### Example 1: Flat Structure
-
-**Before**
-```json
-{
-    "B": "Value 2",
-    "A": "Value 1"
-}
-```
-
-**After**
-```json
-{
-    "A": "Value 1",
-    "B": "Value 2"
-}
-```
-  
-#### Example 2: Ordered Array
-
-The order of data in an array is consistent, and not alphabetized. Alphabetization is by key only.
-
-**Before**
-```json
-{
-    "A": "Value 1",
-    "B": ["a", "z", "b"]
-}
-```
-
-**After**
-```json
-{
-    "A": "Value 1",
-    "B": ["a", "z", "b"]
-}
-```
-
-#### Example 3: Hierarchical Structure
-
-**Before**
-```json
-{
-    "B": [
-        {"D": "2", "C": "1"},
-        {"F": "6", "E": "5"},
-        {"A": "4", "B": "3"}
-    ],
-    "A": "Value 1"
-}
-```
-
-**After**
-```json
-{
-    "A": "Value 1",
-    "B": [
-        {"C": "1", "D": "2"},
-        {"E": "5", "F": "6"},
-        {"A": "4", "B": "3"}
-    ]
-}
-```
-
-#### Serialization
-
-Serializing structured data is a simple JSON to bytes conversion, hold the following exception around string values:
-
-
->String values encode as JSON strings coerced to valid UTF-8, replacing invalid bytes with the Unicode replacements. So that the JSON will be safe to embed inside HTML <script> tags, the string is encoded by replacing "<", ">", "&", U+2028, and U+2029 are escaped to "\u003c","\u003e", "\u0026", "\u2028", and "\u2029".
+This signature suite uses [Draft 17 of the JSON Canonicalization Scheme (JCS)](https://tools.ietf.org/id/draft-rundgren-json-canonicalization-scheme-17.html), currently holding the __Informational__ status, by the [IETF Network Working Group](https://datatracker.ietf.org/drafts/current/). Future versions of this specification may use later versions of JCS as the spec progresses.
 
 ### Digest Algorithm
 > A URL that identifies the message digest algorithm to use on the canonicalized document. For example: https://www.ietf.org/assignments/jwa-parameters#SHA256
@@ -147,6 +75,7 @@ We have provided reference implementations in Golang and Java.
 - [DID Core Specification](https://w3c.github.io/did-core/)
 - [Linked Data Signatures](https://w3c-dvcg.github.io/ld-signatures)
 - [Linked Data Proofs](https://w3c-dvcg.github.io/ld-proofs/)
+- [JSON Canonicalization Scheme (JCS) Draft 17](https://tools.ietf.org/id/draft-rundgren-json-canonicalization-scheme-17.html)
 - [UTF-8](https://tools.ietf.org/html/rfc3629)
 - [SHA-512](https://tools.ietf.org/html/rfc6234)
 - [Ed25519](https://tools.ietf.org/html/rfc8032)
