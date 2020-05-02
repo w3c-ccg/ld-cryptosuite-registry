@@ -418,6 +418,106 @@ Suites that support multiple verification methods MUST state so explicitly, and 
 }
 </pre>
   </section>
+
+  <section>
+
+    <h3>EcdsaSecp256k1RecoverySignature2020</h3>
+
+    <table class="simple">
+      <thead>
+        <tr>
+          <th colspan=2>Summary</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Identifiers</td>
+          <td>EcdsaSecp256k1RecoverySignature2020</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td>PROVISIONAL</td>
+        </tr>
+        <tr>
+          <td>Authors</td>
+          <td>Orie Steele</td>
+        </tr>
+        <tr>
+          <td>Specification</td>
+          <td><a href="https://github.com/decentralized-identity/EcdsaSecp256k1RecoverySignature2020">ECDSA Secp256k1 Recovery Signature Suite 2019</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>EcdsaSecp256k1RecoveryMethod2020</h3>
+
+    <table class="simple">
+      <thead>
+        <tr>
+          <th colspan=2>Summary</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Identifiers</td>
+          <td>EcdsaSecp256k1RecoveryMethod2020</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td>PROVISIONAL</td>
+        </tr>
+        <tr>
+          <td>Authors</td>
+          <td>Orie Steele</td>
+        </tr>
+        <tr>
+          <td>Specification</td>
+          <td><a href="https://github.com/decentralized-identity/EcdsaSecp256k1RecoverySignature2020">ECDSA Secp256k1 Recovery Signature Suite 2019</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+<pre class="example nohighlight" title="Example using publicKeyJwk">
+{
+  "id": "did:example:123#WqzaOweASs78whhl_YvCEvj1nd89IycryVlmZMefcjU",
+  "type": "EcdsaSecp256k1RecoveryMethod2020",
+  "controller": "did:example:123",
+  "publicKeyJwk": {
+    "crv": "secp256k1",
+    "x": "4xAbUxbGGFPv4qpHlPFAUJdzteUGR1lRK-CELCufU9w",
+    "y": "EYcgCTsff1qtZjI9_ckZTXDSKAIuM0BknrKgo0BZ_Is",
+    "kty": "EC",
+    "kid": "WqzaOweASs78whhl_YvCEvj1nd89IycryVlmZMefcjU"
+  }
+}
+</pre>
+
+<p class="issue" data-number="28"><code>publicKeyHex</code> remains unsupported in did-core.</p>
+
+<pre class="example nohighlight" title="Example using publicKeyHex">
+{
+  "id": "did:example:123#keys-1",
+  "type": "EcdsaSecp256k1RecoveryMethod2020",
+  "controller": "did:example:123",
+  "expires": "2017-02-08T16:02:20Z",
+  "publicKeyHex": "02b97c30de767f084...263d29f1450936b71"
+}
+</pre>
+
+<pre class="example nohighlight" title="Example using ethereumAddress">
+  {
+    "id": "did:example:123#keys-1",
+    "type": "EcdsaSecp256k1RecoveryMethod2020",
+    "controller": "did:example:123",
+    "ethereumAddress": "0x89a932207c485f85226d86f7cd486a89a24fcc12"
+  }
+  </pre>
+  </section>
+
+
+  
 </section>
 
   <section>
