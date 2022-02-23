@@ -516,6 +516,53 @@ Suites that support multiple verification methods MUST state so explicitly, and 
   </pre>
   </section>
 
+  <section>
+    <h3>EthereumEip712Signature2021</h3>
+
+    <table class="simple">
+      <thead>
+        <tr>
+          <th colspan=2>Summary</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Identifiers</td>
+          <td>EthereumEip712Signature2021</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td>PROVISIONAL</td>
+        </tr>
+        <tr>
+          <td>Authors</td>
+          <td>Oliver Terbu, Haardik, Charles E. Lehner</td>
+        </tr>
+        <tr>
+          <td>Specification</td>
+          <td><a href="https://github.com/w3c-ccg/ethereum-eip712-signature-2021-spec/">Ethereum EIP-712 Signature 2021</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+<pre class="example nohighlight">
+{
+  "proof": {
+    "type": "EthereumEip712Signature2021",
+    "created": "2019-12-11T03:50:55Z",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "0xc565d38982e1a5004efb5ee390fba0a08bb5e72b3f3e91094c66bc395c324f785425d58d5c1a601372d9c16164e380c63e89f1e0ea95fdefdf7b2854c4f938e81b",
+    "verificationMethod": "did:example:aaaabbbb#issuerKey-1",
+    "eip712Domain": {
+      "messageSchema": "https://example.com/schemas/v1",
+      "primaryType": "VerifiableCredential"
+    }
+  }
+}
+</pre>
+
+  </section>
 
   
 </section>
